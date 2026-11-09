@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis XV Años</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --rosa: #d9a9b7;
+  --champagne: #ead8c2;
+  --oscuro: #47343d;
+  --fondo: #fff8f5;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--oscuro);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+h1 { font-size: 76px; margin: 15px 0; }
+h2 { font-size: 48px; }
+
+section {
+  padding: 65px 20px;
+}
+
+.portada {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background:
+    linear-gradient(#3e28384d,#3e28384d),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1400');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.sobre {
+  border: 1px solid #f1d8df;
+  padding: 35px 25px;
+  background: #fff9f3ed;
+  color: var(--oscuro);
+  max-width: 420px;
+  width: 100%;
+  animation: aparecer 1.5s ease;
+}
+
+.sobre p {
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.sobre h1 { color: #b77b91; }
+
+.boton {
+  display: inline-block;
+  margin: 12px 5px;
+  padding: 14px 24px;
+  border: 1px solid var(--rosa);
+  border-radius: 30px;
+  background: var(--rosa);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #b77b91;
+}
+
+.texto {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.detalles {
+  background: white;
+}
+
+.fecha {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.cuenta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.numero {
+  background: white;
+  border: 1px solid var(--champagne);
+  padding: 18px 12px;
+  min-width: 75px;
+}
+
+.numero strong {
+  display: block;
+  font-size: 25px;
+}
+
+.numero span {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.fotos {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.fotos img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.tarjeta {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  border: 1px solid var(--champagne);
+  background: white;
+}
+
+.icono {
+  font-size: 30px;
+}
+
+footer {
+  padding: 40px 15px;
+  background: #ead8df;
+}
+
+#contenido { display: none; }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<section class="portada">
+  <div class="sobre">
+    <p>ESTÁS INVITADO/A A CELEBRAR</p>
+    <h2>Mis XV Años</h2>
+    <h1>SOFÍA</h1>
+    <p>UNA NOCHE MÁGICA E INOLVIDABLE</p>
+    <button class="boton" onclick="abrirInvitacion()">
+      ABRIR INVITACIÓN ♡
+    </button>
+  </div>
+</section>
+
+<div id="contenido">
+
+<!-- BIENVENIDA -->
+
+<section>
+  <p>CON MUCHA ALEGRÍA...</p>
+  <h2>¡Te espero!</h2>
+  <p class="texto">
+    Hay momentos que merecen ser compartidos
+    con personas especiales. Quiero que seas
+    parte de esta noche tan importante para mí.
+    ¡Me encantaría contar con tu presencia!
+  </p>
+  <h1>SOFÍA</h1>
+</section>
+
+<!-- CUENTA REGRESIVA -->
+
+<section class="detalles">
+  <h2>Falta poquito...</h2>
+  <div class="cuenta">
+    <div class="numero">
+      <strong id="dias">00</strong>
+      <span>DÍAS</span>
+    </div>
+    <div class="numero">
+      <strong id="horas">00</strong>
+      <span>HORAS</span>
+    </div>
+    <div class="numero">
+      <strong id="minutos">00</strong>
+      <span>MINUTOS</span>
+    </div>
+    <div class="numero">
+      <strong id="segundos">00</strong>
+      <span>SEGUNDOS</span>
+    </div>
+  </div>
+</section>
+
+<!-- FECHA -->
+
+<section>
+  <h2>Un día especial</h2>
+  <p class="fecha">31 · OCTUBRE · 2026</p>
+  <p>Sábado | 21:00 hs</p>
+</section>
+
+<!-- UBICACIÓN -->
+
+<section class="detalles">
+  <div class="icono">♡</div>
+  <h2>¿Dónde?</h2>
+
+  <div class="tarjeta">
+    <h3>LA RECEPCIÓN</h3>
+    <p>Nombre del salón</p>
+    <p>Dirección del evento</p>
+    <a class="boton" target="_blank"
+       href="https://www.google.com/maps">
+       VER UBICACIÓN
+    </a>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+
+<section>
+  <h2>Mis recuerdos</h2>
+  <p class="texto">Algunos momentos especiales...</p>
+
+  <div class="fotos">
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600" alt="Decoración de fiesta">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600" alt="Celebración">
+    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600" alt="Mesa de celebración">
+    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600" alt="Fiesta">
+  </div>
+</section>
+
+<!-- VESTIMENTA -->
+
+<section class="detalles">
+  <div class="icono">✧</div>
+  <h2>Dress Code</h2>
+  <p>Elegante</p>
+  <p class="texto">
+    ¡Elegí tu mejor look para compartir
+    conmigo esta noche especial!
+  </p>
+</section>
+
+<!-- REGALOS -->
+
+<section>
+  <div class="icono">♡</div>
+  <h2>Un detalle especial</h2>
+  <p class="texto">
+    Tu presencia es mi mejor regalo.
+    Pero si deseas hacerme un obsequio,
+    te dejo mis datos:
+  </p>
+  <div class="tarjeta">
+    <p>ALIAS</p>
+    <h3 id="alias">TU.ALIAS.AQUI</h3>
+    <button class="boton" onclick="copiarAlias()">
+      COPIAR ALIAS
+    </button>
+  </div>
+</section>
+
+<!-- CONFIRMACIÓN -->
+
+<section class="detalles">
+  <h2>¿Me acompañás?</h2>
+  <p class="texto">
+    Confirmá tu asistencia. ¡Será una alegría
+    compartir esta noche con vos!
+  </p>
+
+  <a class="boton" target="_blank"
+     href="https://wa.me/5493810000000?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20tus%20XV">
+     CONFIRMAR ASISTENCIA
+  </a>
+</section>
+
+<footer>
+  <h2>¡Te espero!</h2>
+  <p>Con cariño, SOFÍA ♡</p>
+  <p>Mis XV Años · 2026</p>
+</footer>
+
+</div>
+
+<script>
+
+// ABRIR INVITACIÓN
+
+function abrirInvitacion() {
+  document.getElementById("contenido").style.display = "block";
+  document.getElementById("contenido").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// FECHA DEL EVENTO
+// CAMBIAR POR TU FECHA
+
+const fechaEvento = new Date("2026-10-31T21:00:00").getTime();
+
+function actualizarCuenta() {
+  const ahora = new Date().getTime();
+  const diferencia = fechaEvento - ahora;
+
+  if (diferencia <= 0) {
+    document.querySelector(".cuenta").innerHTML =
+      "¡Llegó el gran día!";
+    return;
+  }
+
+  document.getElementById("dias").innerText =
+    Math.floor(diferencia / 86400000);
+
+  document.getElementById("horas").innerText =
+    Math.floor((diferencia % 86400000) / 3600000);
+
+  document.getElementById("minutos").innerText =
+    Math.floor((diferencia % 3600000) / 60000);
+
+  document.getElementById("segundos").innerText =
+    Math.floor((diferencia % 60000) / 1000);
+}
+
+actualizarCuenta();
+setInterval(actualizarCuenta, 1000);
+
+// COPIAR ALIAS
+
+function copiarAlias() {
+  const alias = document.getElementById("alias").innerText;
+  navigator.clipboard.writeText(alias)
+    .then(() => alert("¡Alias copiado!"))
+    .catch(() => alert("No se pudo copiar el alias."));
+}
+
+</script>
+
+</body>
+</html>
